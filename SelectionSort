@@ -1,0 +1,21 @@
+sortlist = []
+list = input("Enter the list values with comma separation : ")
+for lst in range(len(list)):
+    sortlist = list.split(',')
+    sortlist = [int(value) for value in sortlist]
+
+def sort(sortlist):
+    for i in range(len(sortlist)-1):
+        minpos = i
+        for j in range(i,len(sortlist)):
+            if sortlist[j] < sortlist[minpos]:
+                minpos = j
+        temp = sortlist[i]
+        sortlist[i] = sortlist[minpos]
+        sortlist[minpos] = temp  
+
+        #print(sortlist)      
+
+sort(sortlist)
+
+print(sortlist)
